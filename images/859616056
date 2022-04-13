@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<script type="text/javascript">
+var basePath="/sson";
+</script>
+<title>统一登录中心</title>
+<meta http-equiv=content-type content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="lx:category" content="oa">
+<meta name="lx:appnm" content="com.sankuai.it.iam.ssoservice">
+<meta name="lx:autopv" content="off"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="dns-prefetch" href="//www.dpfile.com" />
+<link rel="dns-prefetch" href="//portal-portm.meituan.com" />
+<link rel="dns-prefetch" href="//lx.meituan.net" />
+<link rel="dns-prefetch" href="//catfront.dianping.com" />
+<link rel="dns-prefetch" href="//catfront.51ping.com" />
+<link rel="dns-prefetch" href="//wreport.meituan.net" />
+<link rel="dns-prefetch" href="//wreport1.meituan.net" />
+<link rel="dns-prefetch" href="//s0.meituan.net" />
+<link rel="dns-prefetch" href="//s1.meituan.net" />
+<link rel="dns-prefetch" href="//s3plus.meituan.net" />
+<link rel="dns-prefetch" href="//report.meituan.com" />
+<link rel="dns-prefetch" href="//ocean.sankuai.com" />
+<link rel="dns-prefetch" href="//s3.meituan.net" />
+<link rel="dns-prefetch" href="//logan.sankuai.com" />
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/default.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/zepto.min.js" crossorigin="anonymous" as="script">
+<link rel="preload" href="//s3.meituan.net/v1/mss_eb9ea9cfff9840198c3ae909b17b4270/production/owl/owl-oa.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//lx.meituan.net/lx.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/yoda.seed.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_29f02df7dcb14a83951095a86f204dfb/common-js/fingerprint2.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/qrcode.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_29f02df7dcb14a83951095a86f204dfb/common-js/crypto-js.min.js" as="script" crossorigin="anonymous">
+<link rel="preload" href="//s3plus.meituan.net/v1/mss_29f02df7dcb14a83951095a86f204dfb/dev/new-sso-center/js/pcLogin-90e061694e2ce1463eb5.js" as="script" crossorigin="anonymous">
+<link href="//s3plus.meituan.net/v1/mss_29f02df7dcb14a83951095a86f204dfb/dev/new-sso-center/css/pcLogin_8437caff.css" rel="stylesheet">
+<script>
+"use strict";!function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:"_Owl_",a=window;a[e]||(a[e]={isRunning:!1,isReady:!1,preTasks:[],dataSet:[],pageData:[],disableMutaObserver:!1,observer:null,use:function(e,t){this.isReady&&a.Owl&&a.Owl[e](t),this.preTasks.push({api:e,data:[t]})},add:function(e){this.dataSet.push(e)},run:function(){var t=this;if(!this.isRunning){this.isRunning=!0;var e=a.onerror;a.onerror=function(){this.isReady||this.add({type:"jsError",data:arguments}),e&&e.apply(a,arguments)}.bind(this),(a.addEventListener||a.attachEvent)("error",function(e){t.isReady||t.add({type:"resError",data:[e]})},!0);var i=window.MutationObserver||window.WebKitMutationObserver||window.MozMutationObserver,r=window.performance||window.WebKitPerformance;if(i&&r){var n=-1,s=window.navigator.userAgent;if(-1<s.indexOf("compatible")&&-1<s.indexOf("MSIE")?(new RegExp("MSIE (\\d+\\.\\d+);").test(s),n=parseFloat(RegExp.$1)):-1<s.indexOf("Trident")&&-1<s.indexOf("rv:11.0")&&(n=11),-1!==n&&n<=11)return void(this.disableMutaObserver=!0);try{this.observer=new i(function(e){t.pageData.push({mutations:e,startTime:r.now()})}),this.observer.observe(document,{childList:!0,subtree:!0})}catch(e){console.log("mutationObserver err")}}else this.disableMutaObserver=!0}}},a[e].run())}();
+</script>
+<script>window.owl_data={};window.owl_data.point=[];</script>
+</head>
+<body id="login" class="pc-login-view">
+<script>
+// 开始解析渲染模板dom
+window.owl_data.point.push({
+position: 16,
+timeStamp: Date.now()
+});
+</script>
+<noscript>
+<p style="text-align: center;color:red; padding: 5px 0;">该页面访问需要浏览器支持（启用）JavaScript</p>
+</noscript>
+<p id="cookie-close-tip" style="text-align: center;color:red; padding: 5px 0; display: none;">该页面访问需要浏览器支持（启用）Cookie</p>
+<p id="ie-close-tip" style="text-align: center;color:red; padding: 5px 0; display: none;">浏览器版本过低，请使用最新版Chrome浏览器访问</p>
+<p id="no-resource-tip" style="text-align: center;color:red; padding: 5px 0; display: none;">网络原因访问失败，请刷新重试或检查网络设置</p>
+<script>
+if(!navigator.cookieEnabled) {
+document.querySelector('#cookie-close-tip').style.display="block";
+} else if(typeof WebSocket !== 'function') {
+document.querySelector('#ie-close-tip').style.display="block";
+}
+</script><div id="doc" class="mission">
+<div id="l-hd">
+<img class="logo" alt="">
+</div>
+<div id="l-bd" class="cf">
+<div class="banner-section" id="topic"></div>
+<div class="login-section-bg" id="section">
+<div class="login-section">
+<div class="slider_shadow"></div>
+<div class="login-tabs login-type-qrcode">
+<div class="login-tab login-tab-form"
+style="display:none"
+>
+<a class="login-toggle login-toggle-form" data-type="form" id="pwdLoginTitle" style="display:none">密码登录</a>
+<a class="login-toggle login-toggle-form" data-type="form" id="smsLoginTitle" style="display:none">短信验证登录</a>
+<img id="qrcode-img" data-type="qrcode"
+class="login-toggle login-toggle-qrcode change-login-type" alt="点击更换登录类型"
+title="点击更换登录类型" src="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/images/switch-to-qrcode.png">
+</div>
+<div class="login-tab login-tab-qrcode"
+>
+<a class="login-toggle login-toggle-qrcode" data-type="qrcode">快速登录</a>
+<img id="form-img" data-type="form"
+class="login-toggle login-toggle-form change-login-type" alt="点击更换登录类型"
+title="点击更换登录类型" src="//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/images/switch-to-form.png">
+</div>
+<a class="login-status">切换状态</a>
+</div>
+<div class="login-container login-qrcode-container"
+>
+<div class="login-help">
+<div class="login-desc">
+<span class="text-red qr-text">大象扫描， 快速登录</span>
+</div>
+<div id="qr-code"></div>
+</div>
+<p class="login-qrcode-download">
+还没有安装大象？
+<a target="_blank" id="downloadDX" rel="noreferrer" href="http://x.sankuai.com/downloadPagePc">立即下载</a>
+</p>
+</div><div class="login-container login-form-container"
+style="display:none"
+>
+<form class="login-form" id="form-submit" action="/sson/login" method="post" style="display:none">
+<div class="form-field form-field--icon">
+<i class="icon icon-user"></i>
+<input type="text" id="login-username"
+name="username" class="common-input" placeholder="请输入用户名" value="">
+</div>
+<div class="form-field form-field--icon" id="iptPwd">
+<i class="icon icon-lock-o"></i>
+<input type="password" id="login-password"
+name="originPassword" placeholder="请输入密码" class="common-input" value="">
+<i class="icon-eye icon-eye-close"></i>
+</div>
+<div class="login-cf"></div>
+<div class="form-field form-field-submit">
+<input type="button" class="btn btn-login-submit common-login-btn" name="commit" id="btn-login" value="登录">
+<input type="button" class="btn btn-login-submit common-login-btn" style="display: none" name="commit" id="btn-login-nopwd" value="免密登录">
+<input type="button" class="btn common-login-btn" style="display: none" id="btn-next-step" value="下一步">
+</div>
+<div class="form-field-other cf">
+<span id="switchSmsMode" tabindex="-1" class="login-btn no-outline common-text-icon">短信验证登录</span>
+<a id="toPwdLogin" tabindex="-1" class="forget-password no-outline common-text-icon" href="javascript:void(0);">密码登录</a>
+<a id="toNoPwdLogin" tabindex="-1" class="forget-password no-outline common-text-icon" href="javascript:void(0);">免密登录</a>
+<span id="forgetPwd" tabindex="-1" class="no-outline common-text-icon">忘记密码</span>
+<input type="hidden" name="refer" value=""/>
+<input type="hidden" name="clientId" value="com.sankuai.it.ead.citadel"/>
+<input type="hidden" name="callback" value="https%3A%2F%2Fkm%2Esankuai%2Ecom%2Fsso%2Fcallback%3Foriginal-url%3D%252Fapi%252Ffile%252Fcdn%252F859258632%252F859616056%253FcontentType%253D1%2526isNewContent%253Dfalse%2526isNewContent%253Dfalse"/>
+<input id="os" type="hidden" name="os" value=""/>
+<input id="screen" type="hidden" name="screen" value=""/>
+<input type="hidden" name="lt" value="LT-68254-nxrCSQdfTdYGXX1GXMeLzpkRqr7QWM-ssosv.it"/>
+<input type="hidden" name="isFromSsoGw" value="false"/>
+<input type="hidden" name="isFromBj" value="false"/>
+<input type="hidden" name="sceneType" value="WebScene"/>
+<input type="hidden" id="isNoPwdLogin" name = "noPwdLogin" value="false"/>
+</div>
+</form>
+<form class="login-form" id="sms-submit" action="/sson/web/mobile/smscode/login" method="post"
+style="display:none">
+<div class="form-field form-input-sms">
+<span id="region" class="region">
+<span class="region-value">
++86
+</span>
+<span class="pull-down">
+<i class="icon-arrow-down"></i>
+</span>
+</span>
+<input type="text" id="login-telephone" name="mobile" placeholder="请输入手机号" value="" />
+<div class="sms-devider"></div>
+</div>
+<div class="region-pull-down">
+<div class="region-item">
+<span class="left">+86</span>
+<span class="right">中国</span>
+</div>
+<div class="region-item">
+<span class="left">+886</span>
+<span class="right">台湾省</span>
+</div>
+<div class="region-item">
+<span class="left">+852</span>
+<span class="right">香港</span>
+</div>
+<div class="region-item">
+<span class="left">+853</span>
+<span class="right">澳门</span>
+</div>
+<div class="region-item">
+<span class="left">+1</span>
+<span class="right">美国</span>
+</div>
+<div class="region-item">
+<span class="left">+1</span>
+<span class="right">加拿大</span>
+</div>
+<div class="region-item">
+<span class="left">+65</span>
+<span class="right">新加坡</span>
+</div>
+<div class="region-item">
+<span class="left">+82</span>
+<span class="right">韩国</span>
+</div>
+<div class="region-item">
+<span class="left">+81</span>
+<span class="right">日本</span>
+</div>
+<div class="region-item">
+<span class="left">+60</span>
+<span class="right">马来西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+66</span>
+<span class="right">泰国</span>
+</div>
+<div class="region-item">
+<span class="left">+55</span>
+<span class="right">巴西</span>
+</div>
+<div class="region-item">
+<span class="left">+58</span>
+<span class="right">委内瑞拉</span>
+</div>
+<div class="region-item">
+<span class="left">+355</span>
+<span class="right">阿尔巴尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+213</span>
+<span class="right">阿尔及利亚</span>
+</div>
+<div class="region-item">
+<span class="left">+93</span>
+<span class="right">阿富汉</span>
+</div>
+<div class="region-item">
+<span class="left">+54</span>
+<span class="right">阿根廷</span>
+</div>
+<div class="region-item">
+<span class="left">+971</span>
+<span class="right">阿拉伯联合酋长国</span>
+</div>
+<div class="region-item">
+<span class="left">+968</span>
+<span class="right">阿曼</span>
+</div>
+<div class="region-item">
+<span class="left">+994</span>
+<span class="right">阿塞拜疆</span>
+</div>
+<div class="region-item">
+<span class="left">+247</span>
+<span class="right">阿森松(英)</span>
+</div>
+<div class="region-item">
+<span class="left">+353</span>
+<span class="right">爱尔兰</span>
+</div>
+<div class="region-item">
+<span class="left">+372</span>
+<span class="right">爱沙尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+376</span>
+<span class="right">安道尔</span>
+</div>
+<div class="region-item">
+<span class="left">+244</span>
+<span class="right">安哥拉</span>
+</div>
+<div class="region-item">
+<span class="left">+61</span>
+<span class="right">澳大利亚</span>
+</div>
+<div class="region-item">
+<span class="left">+675</span>
+<span class="right">巴布亚新几内亚</span>
+</div>
+<div class="region-item">
+<span class="left">+92</span>
+<span class="right">巴基斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+595</span>
+<span class="right">巴拉圭</span>
+</div>
+<div class="region-item">
+<span class="left">+973</span>
+<span class="right">巴林</span>
+</div>
+<div class="region-item">
+<span class="left">+507</span>
+<span class="right">巴拿马</span>
+</div>
+<div class="region-item">
+<span class="left">+359</span>
+<span class="right">保加利亚</span>
+</div>
+<div class="region-item">
+<span class="left">+1242</span>
+<span class="right">巴哈马</span>
+</div>
+<div class="region-item">
+<span class="left">+351</span>
+<span class="right">葡萄牙</span>
+</div>
+<div class="region-item">
+<span class="left">+229</span>
+<span class="right">贝宁</span>
+</div>
+<div class="region-item">
+<span class="left">+238</span>
+<span class="right">佛得角</span>
+</div>
+<div class="region-item">
+<span class="left">+32</span>
+<span class="right">比利时</span>
+</div>
+<div class="region-item">
+<span class="left">+51</span>
+<span class="right">秘鲁</span>
+</div>
+<div class="region-item">
+<span class="left">+354</span>
+<span class="right">冰岛</span>
+</div>
+<div class="region-item">
+<span class="left">+501</span>
+<span class="right">伯利兹</span>
+</div>
+<div class="region-item">
+<span class="left">+375</span>
+<span class="right">白俄罗斯</span>
+</div>
+<div class="region-item">
+<span class="left">+48</span>
+<span class="right">波兰</span>
+</div>
+<div class="region-item">
+<span class="left">+689</span>
+<span class="right">波利尼西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+387</span>
+<span class="right">波斯尼亚和黑塞哥维</span>
+</div>
+<div class="region-item">
+<span class="left">+267</span>
+<span class="right">博茨瓦纳</span>
+</div>
+<div class="region-item">
+<span class="left">+591</span>
+<span class="right">玻利维亚</span>
+</div>
+<div class="region-item">
+<span class="left">+975</span>
+<span class="right">不丹</span>
+</div>
+<div class="region-item">
+<span class="left">+226</span>
+<span class="right">布基纳法索</span>
+</div>
+<div class="region-item">
+<span class="left">+257</span>
+<span class="right">布隆迪</span>
+</div>
+<div class="region-item">
+<span class="left">+240</span>
+<span class="right">赤道几内亚</span>
+</div>
+<div class="region-item">
+<span class="left">+45</span>
+<span class="right">丹麦</span>
+</div>
+<div class="region-item">
+<span class="left">+49</span>
+<span class="right">德国</span>
+</div>
+<div class="region-item">
+<span class="left">+246</span>
+<span class="right">迪戈加西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+684</span>
+<span class="right">东萨摩亚（美）</span>
+</div>
+<div class="region-item">
+<span class="left">+90</span>
+<span class="right">土耳其</span>
+</div>
+<div class="region-item">
+<span class="left">+993</span>
+<span class="right">土库曼斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+228</span>
+<span class="right">多哥</span>
+</div>
+<div class="region-item">
+<span class="left">+593</span>
+<span class="right">厄瓜多尔</span>
+</div>
+<div class="region-item">
+<span class="left">+7</span>
+<span class="right">俄罗斯</span>
+</div>
+<div class="region-item">
+<span class="left">+291</span>
+<span class="right">厄立特里亚</span>
+</div>
+<div class="region-item">
+<span class="left">+33</span>
+<span class="right">法国</span>
+</div>
+<div class="region-item">
+<span class="left">+298</span>
+<span class="right">法罗群岛</span>
+</div>
+<div class="region-item">
+<span class="left">+689</span>
+<span class="right">法属波里尼西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+594</span>
+<span class="right">法属圭亚那</span>
+</div>
+<div class="region-item">
+<span class="left">+679</span>
+<span class="right">斐济</span>
+</div>
+<div class="region-item">
+<span class="left">+63</span>
+<span class="right">菲律宾</span>
+</div>
+<div class="region-item">
+<span class="left">+358</span>
+<span class="right">芬兰</span>
+</div>
+<div class="region-item">
+<span class="left">+500</span>
+<span class="right">福克兰群岛</span>
+</div>
+<div class="region-item">
+<span class="left">+220</span>
+<span class="right">冈比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+242</span>
+<span class="right">刚果</span>
+</div>
+<div class="region-item">
+<span class="left">+57</span>
+<span class="right">哥伦比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+506</span>
+<span class="right">哥斯达黎加</span>
+</div>
+<div class="region-item">
+<span class="left">+590</span>
+<span class="right">瓜得罗普岛（法）</span>
+</div>
+<div class="region-item">
+<span class="left">+592</span>
+<span class="right">圭亚那</span>
+</div>
+<div class="region-item">
+<span class="left">+509</span>
+<span class="right">海地</span>
+</div>
+<div class="region-item">
+<span class="left">+31</span>
+<span class="right">荷兰</span>
+</div>
+<div class="region-item">
+<span class="left">+599</span>
+<span class="right">荷属安的列斯群岛</span>
+</div>
+<div class="region-item">
+<span class="left">+504</span>
+<span class="right">洪都拉斯</span>
+</div>
+<div class="region-item">
+<span class="left">+233</span>
+<span class="right">加纳</span>
+</div>
+<div class="region-item">
+<span class="left">+34</span>
+<span class="right">加那利群岛西</span>
+</div>
+<div class="region-item">
+<span class="left">+855</span>
+<span class="right">柬埔寨</span>
+</div>
+<div class="region-item">
+<span class="left">+241</span>
+<span class="right">加篷</span>
+</div>
+<div class="region-item">
+<span class="left">+253</span>
+<span class="right">吉布提</span>
+</div>
+<div class="region-item">
+<span class="left">+996</span>
+<span class="right">吉尔吉斯斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+686</span>
+<span class="right">基里巴斯</span>
+</div>
+<div class="region-item">
+<span class="left">+263</span>
+<span class="right">津巴布韦</span>
+</div>
+<div class="region-item">
+<span class="left">+224</span>
+<span class="right">几内亚</span>
+</div>
+<div class="region-item">
+<span class="left">+245</span>
+<span class="right">几内亚比绍</span>
+</div>
+<div class="region-item">
+<span class="left">+237</span>
+<span class="right">喀麦隆</span>
+</div>
+<div class="region-item">
+<span class="left">+682</span>
+<span class="right">科克群岛新</span>
+</div>
+<div class="region-item">
+<span class="left">+385</span>
+<span class="right">克罗地亚</span>
+</div>
+<div class="region-item">
+<span class="left">+269</span>
+<span class="right">科摩罗</span>
+</div>
+<div class="region-item">
+<span class="left">+254</span>
+<span class="right">肯尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+225</span>
+<span class="right">科特迪瓦</span>
+</div>
+<div class="region-item">
+<span class="left">+965</span>
+<span class="right">科威特</span>
+</div>
+<div class="region-item">
+<span class="left">+53</span>
+<span class="right">古巴</span>
+</div>
+<div class="region-item">
+<span class="left">+266</span>
+<span class="right">莱索托</span>
+</div>
+<div class="region-item">
+<span class="left">+856</span>
+<span class="right">老挝</span>
+</div>
+<div class="region-item">
+<span class="left">+371</span>
+<span class="right">拉脱维亚</span>
+</div>
+<div class="region-item">
+<span class="left">+961</span>
+<span class="right">黎巴嫩</span>
+</div>
+<div class="region-item">
+<span class="left">+231</span>
+<span class="right">利比里亚</span>
+</div>
+<div class="region-item">
+<span class="left">+218</span>
+<span class="right">利比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+262</span>
+<span class="right">留尼汪岛（法）</span>
+</div>
+<div class="region-item">
+<span class="left">+299</span>
+<span class="right">格陵兰岛</span>
+</div>
+<div class="region-item">
+<span class="left">+995</span>
+<span class="right">格鲁吉亚</span>
+</div>
+<div class="region-item">
+<span class="left">+40</span>
+<span class="right">罗马尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+352</span>
+<span class="right">卢森堡</span>
+</div>
+<div class="region-item">
+<span class="left">+250</span>
+<span class="right">卢旺达</span>
+</div>
+<div class="region-item">
+<span class="left">+356</span>
+<span class="right">马耳他</span>
+</div>
+<div class="region-item">
+<span class="left">+960</span>
+<span class="right">马尔代夫</span>
+</div>
+<div class="region-item">
+<span class="left">+265</span>
+<span class="right">马拉维</span>
+</div>
+<div class="region-item">
+<span class="left">+223</span>
+<span class="right">马里</span>
+</div>
+<div class="region-item">
+<span class="left">+230</span>
+<span class="right">毛里求斯</span>
+</div>
+<div class="region-item">
+<span class="left">+222</span>
+<span class="right">毛里塔尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+389</span>
+<span class="right">马其顿</span>
+</div>
+<div class="region-item">
+<span class="left">+692</span>
+<span class="right">马绍尔群岛</span>
+</div>
+<div class="region-item">
+<span class="left">+596</span>
+<span class="right">马提尼克（法）</span>
+</div>
+<div class="region-item">
+<span class="left">+261</span>
+<span class="right">马达加斯加</span>
+</div>
+<div class="region-item">
+<span class="left">+269</span>
+<span class="right">马约特岛</span>
+</div>
+<div class="region-item">
+<span class="left">+52</span>
+<span class="right">墨西哥</span>
+</div>
+<div class="region-item">
+<span class="left">+880</span>
+<span class="right">孟加拉国</span>
+</div>
+<div class="region-item">
+<span class="left">+976</span>
+<span class="right">蒙古</span>
+</div>
+<div class="region-item">
+<span class="left">+95</span>
+<span class="right">缅甸</span>
+</div>
+<div class="region-item">
+<span class="left">+691</span>
+<span class="right">密克罗尼西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+373</span>
+<span class="right">摩尔多瓦</span>
+</div>
+<div class="region-item">
+<span class="left">+212</span>
+<span class="right">摩洛哥</span>
+</div>
+<div class="region-item">
+<span class="left">+377</span>
+<span class="right">摩纳哥</span>
+</div>
+<div class="region-item">
+<span class="left">+680</span>
+<span class="right">帕劳</span>
+</div>
+<div class="region-item">
+<span class="left">+258</span>
+<span class="right">莫桑比克</span>
+</div>
+<div class="region-item">
+<span class="left">+264</span>
+<span class="right">纳米比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+27</span>
+<span class="right">南非</span>
+</div>
+<div class="region-item">
+<span class="left">+381</span>
+<span class="right">南斯拉夫</span>
+</div>
+<div class="region-item">
+<span class="left">+674</span>
+<span class="right">瑙鲁</span>
+</div>
+<div class="region-item">
+<span class="left">+977</span>
+<span class="right">尼泊尔</span>
+</div>
+<div class="region-item">
+<span class="left">+505</span>
+<span class="right">尼加拉瓜</span>
+</div>
+<div class="region-item">
+<span class="left">+227</span>
+<span class="right">尼日尔</span>
+</div>
+<div class="region-item">
+<span class="left">+234</span>
+<span class="right">尼日利亚</span>
+</div>
+<div class="region-item">
+<span class="left">+683</span>
+<span class="right">纽埃岛（新）</span>
+</div>
+<div class="region-item">
+<span class="left">+672</span>
+<span class="right">诺福克岛（澳）</span>
+</div>
+<div class="region-item">
+<span class="left">+47</span>
+<span class="right">挪威</span>
+</div>
+<div class="region-item">
+<span class="left">+974</span>
+<span class="right">卡塔尔</span>
+</div>
+<div class="region-item">
+<span class="left">+420</span>
+<span class="right">捷克</span>
+</div>
+<div class="region-item">
+<span class="left">+46</span>
+<span class="right">瑞典</span>
+</div>
+<div class="region-item">
+<span class="left">+41</span>
+<span class="right">瑞士</span>
+</div>
+<div class="region-item">
+<span class="left">+503</span>
+<span class="right">萨尔瓦多</span>
+</div>
+<div class="region-item">
+<span class="left">+221</span>
+<span class="right">塞内加尔</span>
+</div>
+<div class="region-item">
+<span class="left">+357</span>
+<span class="right">塞浦路斯</span>
+</div>
+<div class="region-item">
+<span class="left">+248</span>
+<span class="right">塞舌尔</span>
+</div>
+<div class="region-item">
+<span class="left">+232</span>
+<span class="right">赛拉利昂</span>
+</div>
+<div class="region-item">
+<span class="left">+259</span>
+<span class="right">桑给巴尔</span>
+</div>
+<div class="region-item">
+<span class="left">+239</span>
+<span class="right">圣多美和普林西比</span>
+</div>
+<div class="region-item">
+<span class="left">+378</span>
+<span class="right">圣马力诺</span>
+</div>
+<div class="region-item">
+<span class="left">+508</span>
+<span class="right">圣皮埃尔岛和密克隆</span>
+</div>
+<div class="region-item">
+<span class="left">+290</span>
+<span class="right">圣赫勒拿</span>
+</div>
+<div class="region-item">
+<span class="left">+94</span>
+<span class="right">斯里兰卡</span>
+</div>
+<div class="region-item">
+<span class="left">+421</span>
+<span class="right">斯洛伐克</span>
+</div>
+<div class="region-item">
+<span class="left">+386</span>
+<span class="right">斯洛文尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+268</span>
+<span class="right">斯威士兰</span>
+</div>
+<div class="region-item">
+<span class="left">+972</span>
+<span class="right">以色列</span>
+</div>
+<div class="region-item">
+<span class="left">+249</span>
+<span class="right">苏丹</span>
+</div>
+<div class="region-item">
+<span class="left">+966</span>
+<span class="right">沙特阿拉伯</span>
+</div>
+<div class="region-item">
+<span class="left">+677</span>
+<span class="right">所罗门群岛（英）</span>
+</div>
+<div class="region-item">
+<span class="left">+252</span>
+<span class="right">索马里</span>
+</div>
+<div class="region-item">
+<span class="left">+7</span>
+<span class="right">塔吉克斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+7</span>
+<span class="right">哈萨克斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+676</span>
+<span class="right">汤加</span>
+</div>
+<div class="region-item">
+<span class="left">+255</span>
+<span class="right">坦桑尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+216</span>
+<span class="right">突尼斯</span>
+</div>
+<div class="region-item">
+<span class="left">+690</span>
+<span class="right">托克劳群岛（新）</span>
+</div>
+<div class="region-item">
+<span class="left">+688</span>
+<span class="right">图瓦卢</span>
+</div>
+<div class="region-item">
+<span class="left">+678</span>
+<span class="right">瓦努阿图</span>
+</div>
+<div class="region-item">
+<span class="left">+370</span>
+<span class="right">立陶宛</span>
+</div>
+<div class="region-item">
+<span class="left">+502</span>
+<span class="right">危地马拉</span>
+</div>
+<div class="region-item">
+<span class="left">+673</span>
+<span class="right">文莱</span>
+</div>
+<div class="region-item">
+<span class="left">+256</span>
+<span class="right">乌干达</span>
+</div>
+<div class="region-item">
+<span class="left">+380</span>
+<span class="right">乌克兰</span>
+</div>
+<div class="region-item">
+<span class="left">+598</span>
+<span class="right">乌拉圭</span>
+</div>
+<div class="region-item">
+<span class="left">+998</span>
+<span class="right">乌兹别克斯坦</span>
+</div>
+<div class="region-item">
+<span class="left">+34</span>
+<span class="right">西班牙</span>
+</div>
+<div class="region-item">
+<span class="left">+687</span>
+<span class="right">新喀里多尼亚群岛</span>
+</div>
+<div class="region-item">
+<span class="left">+64</span>
+<span class="right">新西兰</span>
+</div>
+<div class="region-item">
+<span class="left">+36</span>
+<span class="right">匈牙利</span>
+</div>
+<div class="region-item">
+<span class="left">+685</span>
+<span class="right">西萨摩亚</span>
+</div>
+<div class="region-item">
+<span class="left">+30</span>
+<span class="right">希腊</span>
+</div>
+<div class="region-item">
+<span class="left">+963</span>
+<span class="right">叙利亚</span>
+</div>
+<div class="region-item">
+<span class="left">+1876</span>
+<span class="right">牙买加</span>
+</div>
+<div class="region-item">
+<span class="left">+374</span>
+<span class="right">亚美尼亚</span>
+</div>
+<div class="region-item">
+<span class="left">+967</span>
+<span class="right">也门</span>
+</div>
+<div class="region-item">
+<span class="left">+964</span>
+<span class="right">伊拉克</span>
+</div>
+<div class="region-item">
+<span class="left">+98</span>
+<span class="right">伊朗</span>
+</div>
+<div class="region-item">
+<span class="left">+91</span>
+<span class="right">印度</span>
+</div>
+<div class="region-item">
+<span class="left">+62</span>
+<span class="right">印度尼西亚</span>
+</div>
+<div class="region-item">
+<span class="left">+44</span>
+<span class="right">英国</span>
+</div>
+<div class="region-item">
+<span class="left">+39</span>
+<span class="right">意大利</span>
+</div>
+<div class="region-item">
+<span class="left">+43</span>
+<span class="right">奥地利</span>
+</div>
+<div class="region-item">
+<span class="left">+84</span>
+<span class="right">越南</span>
+</div>
+<div class="region-item">
+<span class="left">+962</span>
+<span class="right">约旦</span>
+</div>
+<div class="region-item">
+<span class="left">+243</span>
+<span class="right">扎伊尔</span>
+</div>
+<div class="region-item">
+<span class="left">+260</span>
+<span class="right">赞比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+20</span>
+<span class="right">埃及</span>
+</div>
+<div class="region-item">
+<span class="left">+251</span>
+<span class="right">埃塞俄比亚</span>
+</div>
+<div class="region-item">
+<span class="left">+350</span>
+<span class="right">直布罗陀（英）</span>
+</div>
+<div class="region-item">
+<span class="left">+56</span>
+<span class="right">智利</span>
+</div>
+<div class="region-item">
+<span class="left">+236</span>
+<span class="right">中非</span>
+</div>
+<div class="region-item">
+<span class="left">+235</span>
+<span class="right">乍得</span>
+</div>
+</div>
+<div class="form-field form-input-sms form-sms-code">
+<input type="text" name="smsCode" placeholder="请输入短信验证码" class="common-input" id="login-code" autocomplete="off" value="" />
+<input data-type="sms" type="button" class="login-form-getsmsbtn common-sms-code" value="获取短信验证码" disabled />
+</div>
+<div class="login-cf2"></div>
+<div id="sms-tip" class="tip-error">
+</div>
+<div class="form-field form-field-submit">
+<input type="button" class="btn sms-login-submit common-login-btn" name="commit" id="sms-login-btn" value="登录">
+<input type="button" class="btn common-login-btn" style="display: none" id="sms-next-step" value="下一步">
+</div>
+<div class="sms-field-other cf">
+<span id="switchPwdMode" tabindex="-1" class="login-btn no-outline common-text-icon">密码登录</span>
+<input type="hidden" name="refer" value="" />
+<input type="hidden" name="clientId" value="com.sankuai.it.ead.citadel" />
+<input type="hidden" name="callback" value="https%3A%2F%2Fkm%2Esankuai%2Ecom%2Fsso%2Fcallback%3Foriginal-url%3D%252Fapi%252Ffile%252Fcdn%252F859258632%252F859616056%253FcontentType%253D1%2526isNewContent%253Dfalse%2526isNewContent%253Dfalse" />
+<input id="os" type="hidden" name="os" value="" />
+<input id="screen" type="hidden" name="screen" value="" />
+<input type="hidden" name="lt" value="LT-68254-nxrCSQdfTdYGXX1GXMeLzpkRqr7QWM-ssosv.it" />
+<input type="hidden" name="sceneType" value="WebScene" />
+</div></div>
+</div>
+<p class="feedback">
+<i class="icon icon-comment"></i>
+<a href="mailto:6000@meituan.com">问题反馈</a>
+</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var currentPlatform = "PC";
+var hasErrMsg = "";
+var service = "";
+var allowNoPwdLogin = false;
+var username = "";
+var clientId = "com.sankuai.it.ead.citadel";
+var loginTicket = "LT-68254-nxrCSQdfTdYGXX1GXMeLzpkRqr7QWM-ssosv.it";
+var authStyle = "";
+var isMobileLogin = false;
+var rawInterCode = "";
+var redirectUri = "https%3A%2F%2Fkm%2Esankuai%2Ecom%2Fsso%2Fcallback%3Foriginal-url%3D%252Fapi%252Ffile%252Fcdn%252F859258632%252F859616056%253FcontentType%253D1%2526isNewContent%253Dfalse%2526isNewContent%253Dfalse";
+var clickForget = false;
+var _ls = window.localStorage;
+var submitLock = false;
+var isAllowNoPwdLogin = allowNoPwdLogin;
+var isNoPwdLogin = allowNoPwdLogin;
+var isSmsDisabled = false;
+var isPhoneValid = false;
+var smsOrForm;
+if(isMobileLogin) {
+smsOrForm = "sms";
+}
+var Rohr_Opt = {
+geo: false
+};
+var jumpThirdChannel = "";
+</script><script>
+// 服务端页面渲染完成时间
+window.owl_data.point.push({
+position: 0,
+timeStamp: Date.now()
+});
+</script>
+<script>
+// 灵犀预加载脚本
+(function () {
+!(function (win, ns) {
+var cacheFunName = "_MeiTuanALogObject";
+win[cacheFunName] = ns;
+if (!win[ns]) {
+var _LX = function () {
+_LX.q.push(arguments);
+return _LX;
+};
+_LX.q = _LX.q || [];
+_LX.l = +new Date();
+win[ns] = _LX;
+}
+})(window, "LXAnalytics");
+LXAnalytics("config", "useQR", true); // 开发快速上报功能，满足即时数据分析的需求
+LXAnalytics("config", "onWebviewAppearAutoPV", false); // 关闭Webview容器显示/隐藏时的自动PV/PD
+LXAnalytics('config','isDev', window.location.host.indexOf('test') > -1 || window.location.host.indexOf('beta') > -1 || window.location.hostname === 'localhost'); // 上报至线上/线下环境
+})();
+</script>
+<script>
+// promise-polyfill
+!(function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n():"function"==typeof define&&define.amd?define(n):n()})(0,function(){function e(e){var n=this.constructor;return this.then(function(t){return n.resolve(e()).then(function(){return t})},function(t){return n.resolve(e()).then(function(){return n.reject(t)})})}function n(e){return !(!e||"undefined"==typeof e.length)}function t(){}function o(e){if(!(this instanceof o)){throw new TypeError("Promises must be constructed via new")}if("function"!=typeof e){throw new TypeError("not a function")}(this._state=0),(this._handled=!1),(this._value=undefined),(this._deferreds=[]),c(e,this)}function r(e,n){for(;3===e._state;){e=e._value}0!==e._state?((e._handled=!0),o._immediateFn(function(){var t=1===e._state?n.onFulfilled:n.onRejected;if(null!==t){var o;try{o=t(e._value)}catch(r){return void f(n.promise,r)}i(n.promise,o)}else{(1===e._state?i:f)(n.promise,e._value)}})):e._deferreds.push(n)}function i(e,n){try{if(n===e){throw new TypeError("A promise cannot be resolved with itself.")}if(n&&("object"==typeof n||"function"==typeof n)){var t=n.then;if(n instanceof o){return(e._state=3),(e._value=n),void u(e)}if("function"==typeof t){return void c((function(e,n){return function(){e.apply(n,arguments)}})(t,n),e)}}(e._state=1),(e._value=n),u(e)}catch(r){f(e,r)}}function f(e,n){(e._state=2),(e._value=n),u(e)}function u(e){2===e._state&&0===e._deferreds.length&&o._immediateFn(function(){e._handled||o._unhandledRejectionFn(e._value)});for(var n=0,t=e._deferreds.length;t>n;n++){r(e,e._deferreds[n])}e._deferreds=null}function c(e,n){var t=!1;try{e(function(e){t||((t=!0),i(n,e))},function(e){t||((t=!0),f(n,e))})}catch(o){if(t){return}(t=!0),f(n,o)}}var a=setTimeout;(o.prototype["catch"]=function(e){return this.then(null,e)}),(o.prototype.then=function(e,n){var o=new this.constructor(t);return(r(this,new (function(e,n,t){(this.onFulfilled="function"==typeof e?e:null),(this.onRejected="function"==typeof n?n:null),(this.promise=t)})(e,n,o)),o)}),(o.prototype["finally"]=e),(o.all=function(e){return new o(function(t,o){function r(e,n){try{if(n&&("object"==typeof n||"function"==typeof n)){var u=n.then;if("function"==typeof u){return void u.call(n,function(n){r(e,n)},o)}}(i[e]=n),0==--f&&t(i)}catch(c){o(c)}}if(!n(e)){return o(new TypeError("Promise.all accepts an array"))}var i=Array.prototype.slice.call(e);if(0===i.length){return t([])}for(var f=i.length,u=0;i.length>u;u++){r(u,i[u])}})}),(o.resolve=function(e){return e&&"object"==typeof e&&e.constructor===o?e:new o(function(n){n(e)})}),(o.reject=function(e){return new o(function(n,t){t(e)})}),(o.race=function(e){return new o(function(t,r){if(!n(e)){return r(new TypeError("Promise.race accepts an array"))}for(var i=0,f=e.length;f>i;i++){o.resolve(e[i]).then(t,r)}})}),(o._immediateFn=("function"==typeof setImmediate&&function(e){setImmediate(e)})||function(e){a(e,0)}),(o._unhandledRejectionFn=function(e){void 0!==console&&console&&console.warn("Possible Unhandled Promise Rejection:",e)});var l=(function(){if("undefined"!=typeof self){return self}if("undefined"!=typeof window){return window}if("undefined"!=typeof global){return global}throw Error("unable to locate global object")})();"Promise" in l?l.Promise.prototype["finally"]||(l.Promise.prototype["finally"]=e):(l.Promise=o)});
+</script><script>
+// document.ready自己实现
+(function(funcName, baseObj) {
+funcName = funcName || "docReady";
+baseObj = baseObj || window;
+var readyList = [];
+var readyFired = false;
+var readyEventHandlersInstalled = false;
+// call this when the document is ready
+// this function protects itself against being called more than once
+function ready() {
+if (!readyFired) {
+// this must be set to true before we start calling callbacks
+readyFired = true;
+for (var i = 0; i < readyList.length; i++) {
+readyList[i].fn.call(window, readyList[i].ctx);
+}
+// allow any closures held by these functions to free
+readyList = [];
+}
+}
+function readyStateChange() {
+if ( document.readyState === "complete" ) {
+ready();
+}
+}
+baseObj[funcName] = function(callback, context) {
+if (typeof callback !== "function") {
+throw new TypeError("callback for docReady(fn) must be a function");
+}
+// if ready has already fired, then just schedule the callback
+// to fire asynchronously, but right away
+if (readyFired) {
+setTimeout(function() {callback(context);}, 1);
+return;
+} else {
+// add the function and context to the list
+readyList.push({fn: callback, ctx: context});
+}
+// if document already ready to go, schedule the ready function to run
+if (document.readyState === "complete") {
+setTimeout(ready, 1);
+} else if (!readyEventHandlersInstalled) {
+// otherwise if we don't have event handlers installed, install them
+if (document.addEventListener) {
+// first choice is DOMContentLoaded event
+document.addEventListener("DOMContentLoaded", ready, false);
+// backup is window load event
+window.addEventListener("load", ready, false);
+} else {
+// must be IE
+document.attachEvent("onreadystatechange", readyStateChange);
+window.attachEvent("onload", ready);
+}
+readyEventHandlersInstalled = true;
+}
+}
+})("docReady", window);
+function loadScript(url, callback, fail) {
+var script = document.createElement("script");
+script.type = "text/javascript";
+script.crossOrigin = "anonymous";
+if (script.readyState) {
+// IE
+script.onreadystatechange = function() {
+if (
+script.readyState == "loaded" ||
+script.readyState == "complete"
+) {
+script.onreadystatechange = null;
+callback && callback();
+}
+};
+} else {
+// Others
+script.onload = function() {
+callback && callback();
+};
+script.onerror = function() {
+fail && fail();
+};
+}
+script.src = url;
+document.body.appendChild(script);
+}
+function netWorkError() {
+document.querySelector('#no-resource-tip').style.display = "block";
+document.querySelector('#cookie-close-tip').style.display = "none";
+document.querySelector('#ie-close-tip').style.display = "none";
+}
+if (typeof module === 'object') { window.module = module; module = undefined; }
+docReady(function() {
+if (window.performance && performance.timing && performance.timing.fetchStart) {
+// 自定义dom ready时间（从fetchStart起）
+window.owl_data.point.push({
+position: 17,
+duration: Date.now() - performance.timing.fetchStart
+});
+}
+loadScript("//s3plus.meituan.net/v1/mss_e7b95138dc0d4c29858d76b37e6ebef7/sso-service/static/zepto.min.js",
+function() {
+if (window.module) module = window.module;
+// zepto加载完成时间
+window.owl_data.point.push({
+position: 9,
+timeStamp: Date.now()
+});
+loadScript("//s3plus.meituan.net/v1/mss_29f02df7dcb14a83951095a86f204dfb/dev/new-sso-center/js/pcLogin-90e061694e2ce1463eb5.js",
+function() {
+// bundle加载完成时间
+window.owl_data.point.push({
+position: 18,
+duration: Date.now() - performance.timing.fetchStart
+});
+},
+function() {
+netWorkError();
+throw new Error('bundle 加载失败');
+}
+);
+},
+function() {
+netWorkError();
+throw new Error('Zepto 加载失败');
+}
+);
+});
+</script>
+</body>
+</html>
