@@ -35,7 +35,7 @@ Java主要准备下面几点：
 
 <font color="red">新手不建议去看《算法导论》《算法 第三版》这种书，太厚了没几个人看得下去的</font>，直接看下基本的数据结构（数组、队列、堆、栈、二叉树、链表）然后开始刷题：
 
-- [CS-Notes/](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode 题解 - 目录.md)[Leetcode](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode 题解 - 目录.md)[题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode 题解 - 目录.md)[ ](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode 题解 - 目录.md)按tag刷完接近200多道即可
+- [CS-Notes力扣题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode 题解 - 目录.md)按tag刷完接近200多道即可
 
 -  《剑指offer》至少刷两遍、里面的题目必须非常熟练
 
